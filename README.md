@@ -79,7 +79,8 @@ kubectl apply -f net-policy.yaml
 kubectl describe networkpolicy allow-empire-only
 ```
 
-## Generate test traffic.  Notice that the xwing connection should fail and time-out.
+## Generate test traffic
+Notice that the xwing connection should fail and time-out.
 ```shell
 kubectl exec tiefighter -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
 kubectl exec xwing -- curl -s -XPOST deathstar.default.svc.cluster.local/v1/request-landing
