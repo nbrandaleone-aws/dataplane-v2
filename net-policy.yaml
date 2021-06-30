@@ -1,0 +1,22 @@
+  apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    name: allow-empire-only
+    namespace: default
+    annotations:
+      policy.network.gke.io/enable-logging: "true"
+  spec:
+    podSelector:
+      matchLabels:
+        org: empire
+        class: deathstar
+    ingress:
+    - from:
+      - podSelector:
+          matchLabels:
+            org: empire
+      ports:
+      - protocol: TCP
+        port: 80
+    policyTypes:
+    - Ingress
