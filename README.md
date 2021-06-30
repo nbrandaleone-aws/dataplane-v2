@@ -1,5 +1,6 @@
 # Demonstrating GKE Dataplane-v2
 
+## Create a GKE cluster
 ``` shell
 gcloud container clusters create demo \
     --enable-dataplane-v2 \
